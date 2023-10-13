@@ -31,7 +31,7 @@ describe('Tournaments', () => {
     })
     it('Verify Overview tab',() => {
         cy.visit('https://lysto.gg/games/bgmi-295/tournaments/tragic-esports-bgmi-showdown-cup-s1-60')
-        cy.get('#Overview').should('have.text','Overview')
+        cy.xpath('/html/body/div[1]/section/div/div[2]/div[2]/div/div[2]/div/div/div/p[1]').click()
         cy.contains('Overview').should('be.visible')
     })
     it('Verify Tournament Duration section',() => {
@@ -68,42 +68,42 @@ describe('Tournaments', () => {
     });
     it('Verify Participants tab',() => {
         cy.visit('https://lysto.gg/games/bgmi-295/tournaments/tragic-esports-bgmi-showdown-cup-s1-60')
-        cy.get('#Participants').click()
+        cy.xpath('/html/body/div[1]/section/div/div[2]/div[2]/div/div[2]/div/div/div/p[2]').click()
         cy.contains("Participants").should('be.visible')
     });
     it('Verify teams text and total team count',() => {
         cy.visit('https://lysto.gg/games/bgmi-295/tournaments/tragic-esports-bgmi-showdown-cup-s1-60')
-        cy.get('#Participants').click()
+        cy.xpath('/html/body/div[1]/section/div/div[2]/div[2]/div/div[2]/div/div/div/p[2]').click()
         cy.contains("Teams").should('be.visible')
         cy.contains("419").should('be.visible')
     });
     it('Verify some random team names and team members: 1)HAVOK ESPORTS',() => {
         cy.visit('https://lysto.gg/games/bgmi-295/tournaments/tragic-esports-bgmi-showdown-cup-s1-60')
-        cy.get('#Participants').click()
+        cy.xpath('/html/body/div[1]/section/div/div[2]/div[2]/div/div[2]/div/div/div/p[2]').click()
         cy.contains("HAVOK ESPORTS").should('be.visible')
         cy.contains("811672109918").should('be.visible')
         cy.contains("HAVOK彡sToRmOP").should('be.visible')
     });
     it('2)ICONIC GAMERS',() => {
         cy.visit('https://lysto.gg/games/bgmi-295/tournaments/tragic-esports-bgmi-showdown-cup-s1-60')
-        cy.get('#Participants').click()
+        cy.xpath('/html/body/div[1]/section/div/div[2]/div[2]/div/div[2]/div/div/div/p[2]').click()
         cy.contains("ICONIC GAMERS").should('be.visible')
         cy.contains("55571493473").should('be.visible')
     });
     it('3)Earthquake  ',() => {
         cy.visit('https://lysto.gg/games/bgmi-295/tournaments/tragic-esports-bgmi-showdown-cup-s1-60')
-        cy.get('#Participants').click()
+        cy.xpath('/html/body/div[1]/section/div/div[2]/div[2]/div/div[2]/div/div/div/p[2]').click()
         cy.contains("Earthquake ").should('be.visible')
         cy.contains("5122816946").should('be.visible')
     });
     it('Verify results tab',() => {
         cy.visit('https://lysto.gg/games/bgmi-295/tournaments/tragic-esports-bgmi-showdown-cup-s1-60')
-        cy.get('#Results').click()
+        cy.xpath('/html/body/div[1]/section/div/div[2]/div[2]/div/div[2]/div/div/div/p[3]').click()
         cy.contains("Results").should('be.visible')
     });
     it('Verify clips tab',() => {
         cy.visit('https://lysto.gg/games/bgmi-295/tournaments/tragic-esports-bgmi-showdown-cup-s1-60')
-        cy.get('#Clips').click()
+        cy.xpath('/html/body/div[1]/section/div/div[2]/div[2]/div/div[2]/div/div/div/p[4]').click()
         cy.contains("Clips").should('be.visible')
     });
 });

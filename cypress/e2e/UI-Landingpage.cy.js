@@ -13,11 +13,11 @@ describe('Landing page',() => {
     });
     it('Type username and verify login popup is opening or not after clicking on claim',() => {
         cy.visit('https://lysto.gg/');
-        cy.get('[id=":r1:"]').type('Rahul');
+        cy.get('[id=":r1:"]').type('KING KOHLI');
         cy.wait(2000);
         cy.contains('CLAIM').click();
         cy.wait(6000);
-        cy.get('.MuiPaper-root > .css-rfnosa').should('be.visible');
+        cy.get('.MuiGrid-root css-rfnosa').should('be.visible');
     });
     it('Verify tournaments text & click on tournaments in top right toolbar',() => {
         cy.visit('https://lysto.gg/');

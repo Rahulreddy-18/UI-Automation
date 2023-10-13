@@ -23,17 +23,17 @@ it('Verify Tournament/past page', () => {
 });
 it('Verify scrims/upcoming page', () => {
   cy.visit('https://lysto.gg/scrims/upcoming')
-  cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/img').click()
+  cy.xpath('//*[@id="__next"]/div/div[2]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/img').click()
   cy.get('Img[src="/static/images/ic_close.svg"]')
 })
 it('Verify scrims/live page', () => {
   cy.visit('https://lysto.gg/scrims/live')
-  cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/img').click()
+  cy.xpath('//*[@id="__next"]/div/div[2]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/img').click()
   cy.get('Img[src="/static/images/ic_close.svg"]')
 })
 it('Verify scrims/past page', () => {
   cy.visit('https://lysto.gg/scrims/past')
-  cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/img').click()
+  cy.xpath('//*[@id="__next"]/div/div[2]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/img').click()
   cy.get('Img[src="/static/images/ic_close.svg"]')
 })
 it('Verify communities page', () => {
