@@ -13,7 +13,7 @@ describe('Landing page',() => {
     });
     it('Type username and verify login popup is opening or not after clicking on claim',() => {
         cy.visit('https://lysto.gg/');
-        cy.get('[id=":r1:"]').type('KING KOHLI');
+        cy.get('[id=":r1:"]').type('KINGKOHLI');
         cy.wait(2000);
         cy.contains('CLAIM').click();
         cy.wait(6000);
