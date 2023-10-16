@@ -3,6 +3,10 @@ describe('Landing page',() => {
         cy.visit('https://lysto.gg/');
         cy.title().should('eq','Lysto.gg Build your own gaming Identity');
     });
+    it('Verify lysto image at top left corner', () => {
+        cy.visit('https://lysto.gg/')
+        cy.get('Img[src="/static/images/lysto_banner.svg"]').should('be.visible')
+    })
     it('Verify heading(h1) text in top banner',() => {
         cy.visit('https://lysto.gg/');
         cy.xpath('//*[@id="__next"]/section/div/div[2]/div/section[1]/div/div/div[1]/div/div[1]/div[1]/p[1]').should('have.text', "World's first gamer profile creator is here! Make yours now.");
@@ -115,5 +119,24 @@ describe('Landing page',() => {
         cy.get('#Investor_id').click();
         cy.get('.IndivualInvestorImages').should('be.visible');
     });
+    it('Verify "We are hiring!" text and "Join the team!" button', () => {
+        cy.visit('https://lysto.gg/')
+        cy.contains('We are hiring!').should('be.visible')
+        cy.contains('Join the team!').should('be.visible')
+    })
+    it('Verify footer', () => {
+        cy.visit('https://lysto.gg/')
+        cy.contains('Terms of Use').should('be.visible')
+        cy.contains('Privacy Policy').should('be.visible')
+    })
+    it('Verify medium image in footer', () => {
+        cy.contains('Img[src="/static/images/ic_medium_footer.svg"]').should('be.visible')
+    })
+    it('Verify twitter image in footer', () => {
+        cy.contains('Img[src="/static/images/ic_twitter_footer.svg"]').should('be.visible')
+    })
+    it('Verify discord image in footer', () => {
+        cy.contains('Img[src="/static/images/ic_discord_colour.svg"]').should('be.visible')
+    })
 });
 
