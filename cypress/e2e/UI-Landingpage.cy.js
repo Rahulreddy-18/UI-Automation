@@ -130,12 +130,15 @@ describe('Landing page',() => {
         cy.contains('Privacy Policy').should('be.visible')
     })
     it('Verify medium image in footer', () => {
+        cy.visit('https://lysto.gg/')
         cy.get('Img[src="/static/images/ic_medium_footer.svg"]').should('be.visible')
     })
     it('Verify twitter image in footer', () => {
+        cy.visit('https://lysto.gg/')
         cy.get('Img[src="/static/images/ic_twitter_footer.svg"]').should('be.visible')
     })
     it('Verify discord image in footer', () => {
+        cy.visit('https://lysto.gg/')
         cy.get('Img[src="/static/images/ic_discord_colour.svg"]').should('be.visible')
     })
 });
