@@ -52,7 +52,7 @@ describe('Scrims page', () => {
     cy.contains('2nd Prize').should('be.visible');
     cy.contains('3rd Prize').should('be.visible');
   });
-  it('Click on one team and verify all team members present or not in Participants section', () => {
+  it('Click on one team and verify all team members present or not in slots list section', () => {
     cy.visit('https://lysto.gg/games/BGMI/scrim/lysto-scrim-1-75');
     cy.contains('Slot list').click();
     cy.contains('Tech Team').click();
@@ -61,6 +61,19 @@ describe('Scrims page', () => {
     cy.contains('Rahulreddy').should('be.visible');
     cy.contains('Kuldeep8').should('be.visible');
   });
+  it('Verify confirmed tab in slot list tab', () => {
+    cy.visit('https://lysto.gg/games/BGMI/scrim/lysto-scrim-1-75')
+    cy.contains('Slot list').click()
+    cy.contains('Waitlist').click()
+    cy.contains('Confirmed').click()
+    cy.contains('Warriors').should('be.visible')
+  })
+  it('Verify waitlist tab in slot list tab', () => {
+    cy.visit('https://lysto.gg/games/BGMI/scrim/lysto-scrim-1-75')
+    cy.contains('Slot list').click();
+    cy.contains('Waitlist').click()
+    cy.contains('No participants to show').should('be.visible')
+  })
   it('Click on one team and verify all team members present or not in results section', () => {
     cy.visit('https://lysto.gg/games/BGMI/scrim/lysto-scrim-1-75');
     cy.contains('Results').click();
@@ -70,4 +83,9 @@ describe('Scrims page', () => {
     cy.contains('Rahulreddy').should('be.visible');
     cy.contains('Kuldeep8').should('be.visible');
   });
+  it('Verify share link in scrims details page', () => {
+    cy.visit('https://lysto.gg/games/BGMI/scrim/lysto-scrim-1-75')
+    cy.get('Img[src="/static/images/share.svg"]').click()
+    cy.get('#textarea').should('have.text','https://lysto.gg/games/BGMI/scrim/lysto-scrim-1-75')
+  })
 });
