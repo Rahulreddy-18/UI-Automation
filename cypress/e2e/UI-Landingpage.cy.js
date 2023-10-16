@@ -130,13 +130,13 @@ describe('Landing page',() => {
         cy.contains('Privacy Policy').should('be.visible')
     })
     it('Verify medium image in footer', () => {
-        cy.contains('Img[src="/static/images/ic_medium_footer.svg"]').should('be.visible')
+        cy.get('Img[src="/static/images/ic_medium_footer.svg"]').should('be.visible')
     })
     it('Verify twitter image in footer', () => {
-        cy.contains('Img[src="/static/images/ic_twitter_footer.svg"]').should('be.visible')
+        cy.get('Img[src="/static/images/ic_twitter_footer.svg"]').should('be.visible')
     })
     it('Verify discord image in footer', () => {
-        cy.contains('Img[src="/static/images/ic_discord_colour.svg"]').should('be.visible')
+        cy.get('Img[src="/static/images/ic_discord_colour.svg"]').should('be.visible')
     })
 });
 
