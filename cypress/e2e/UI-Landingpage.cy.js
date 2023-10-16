@@ -17,7 +17,7 @@ describe('Landing page',() => {
         cy.wait(2000);
         cy.contains('CLAIM').click();
         cy.wait(6000);
-        cy.get('.MuiGrid-root css-rfnosa').should('be.visible');
+        cy.get('Img[src="/static/images/google_login_icon.png"]').should('be.visible');
     });
     it('Verify tournaments text & click on tournaments in top right toolbar',() => {
         cy.visit('https://lysto.gg/');
