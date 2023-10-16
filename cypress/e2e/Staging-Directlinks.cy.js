@@ -42,7 +42,7 @@ it('Verify activities page', () => {
   cy.get('Img[src="/static/images/desktopMomentBanner.png"]').should('be.visible')
 });
 it('Verify quest page', () => {
-  cy.visit('https://passport-staging.lysto.io/quest')
+  cy.visit('https://passport-staging.lysto.io/contests')
   cy.contains('LOGIN TO PARTICIPATE').should('be.visible')
   cy.contains('Win Contests Everyday').should('be.visible')
 });
