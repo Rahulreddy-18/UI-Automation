@@ -4,26 +4,12 @@ describe('Landing page',() => {
     })
     it('Visit landing page & verify title of the page',() => {
         cy.visit('https://lysto.gg/');
-        cy.title().should('eq','Lysto.gg Build your own gaming Identity');
+        cy.title().should('eq',"Lysto.gg | The Ultimate Gamers' Network. Compete, Connect and Win");
     });
     it('Verify lysto image at top left corner', () => {
         cy.visit('https://lysto.gg/')
-        cy.get('Img[src="/static/images/lysto_banner.svg"]').should('be.visible')
+        cy.xpath('//*[@id="__next"]/section/div/div[1]/div[1]/div/div[1]/span/img').should('be.visible')
     })
-    it('Verify heading(h1) text in top banner',() => {
-        cy.visit('https://lysto.gg/');
-        cy.contains("IT’S YOUR TIME").should('be.visible');
-        cy.contains('TO BECOME A LEGEND').should('be.visible');
-    });
-    it('Verify heading(h2) text in top banner',() => {
-        cy.visit('https://lysto.gg/');
-        cy.contains('Win Tournaments with Prizes').should('be.visible');
-        cy.contains('Over Rs. 2 Lakhs').should('be.visible');
-    });
-    it('Verify Register now button in top banner',() => {
-        cy.visit('https://lysto.gg/');
-        cy.contains('REGISTER NOW').should('be.visible');
-    });
     it('Verify tournaments text & click on tournaments in top right toolbar',() => {
         cy.visit('https://lysto.gg/');
         cy.get('#Tournament_02').should('have.text','Tournaments');
@@ -43,11 +29,6 @@ describe('Landing page',() => {
         cy.visit('https://lysto.gg/');
         cy.get('#Communities_03').should('have.text','Communities');
         cy.get('#Communities_03').click({force: true});
-    });
-    it('Verify activities text & click on activities',() => {
-        cy.visit('https://lysto.gg/');
-        cy.get('#Moments_04').should('have.text','Activities');
-        cy.get('#Moments_04').click({force: true});
     });
     it('Verify login text & click on login button',() => {
         cy.visit('https://lysto.gg/');
@@ -98,28 +79,6 @@ describe('Landing page',() => {
         cy.visit('https://lysto.gg/');
         cy.contains('Explore Tournaments').click();
     });
-    it('Verify feature passports are present or not',() => {
-        cy.visit('https://lysto.gg/');
-        cy.contains('Profesor...').should('be.visible');
-        cy.contains('adeeb-dead...').should('be.visible');
-    });
-    it('Verify angels text & click on angels button',() => {
-        cy.visit('https://lysto.gg/');
-        cy.contains('Angels').should('be.visible');
-        cy.contains('Angels').click();
-        cy.get('.IndivualInvestorImages').should('be.visible');
-    });
-    it('Verify investors text & click on Investors button',() => {
-        cy.visit('https://lysto.gg/');
-        cy.contains('Investors').should('be.visible');
-        cy.contains('Investors').click();
-        cy.get('.IndivualInvestorImages').should('be.visible');
-    });
-    it('Verify "We are hiring!" text and "Join the team!" button', () => {
-        cy.visit('https://lysto.gg/')
-        cy.contains('We are hiring!').should('be.visible')
-        cy.contains('Join the Team!').should('be.visible')
-    })
     it('Verify footer', () => {
         cy.visit('https://lysto.gg/')
         cy.contains('Terms & Conditions').should('be.visible')

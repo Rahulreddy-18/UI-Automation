@@ -6,7 +6,7 @@ describe('Communities page',() => {
     it('Verify 10 configured communities are present are not in listing page: 1) YDC ESPORTS',() => {
         cy.visit('https://lysto.gg/communities');
         cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[2]/div/p[1]').should('be.visible');
-        cy.contains('YDC ESPORTS').should('be.visible');
+        cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[4]/div/p[1]').should('have.text','YDC ESPORTS');
     });
     it('2) Deepwoken ',() => {
         cy.visit('https://lysto.gg/communities');
