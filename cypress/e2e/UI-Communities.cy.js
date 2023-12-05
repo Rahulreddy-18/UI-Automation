@@ -3,10 +3,10 @@ describe('Communities page',() => {
     cy.visit('https://lysto.gg/communities');
     cy.contains('Top Communities').should('be.visible');
     });
-    it('Verify 10 configured communities are present are not in listing page: 1) YDC ESPORTS',() => {
+    it('Verify 10 configured communities are present are not in listing page: 1) PUNISHER ESPORTS',() => {
         cy.visit('https://lysto.gg/communities');
         cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[2]/div/p[1]').should('be.visible');
-        cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[4]/div/p[1]').should('have.text','YDC ESPORTS');
+        cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[4]/div/p[1]').should('have.text','PUNISHER ESPORTS');
     });
     it('2) Deepwoken ',() => {
         cy.visit('https://lysto.gg/communities');
