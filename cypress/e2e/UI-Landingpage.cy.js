@@ -4,7 +4,7 @@ describe('Landing page',() => {
     })
     it('Visit landing page & verify title of the page',() => {
         cy.visit('https://lysto.gg/');
-        cy.title().should('eq',"Lysto.gg | The Ultimate Gamers' Network. Compete, Connect and Win");
+        cy.title().should('eq',"Lysto.gg | The Ultimate Gamers' Network");
     });
     it('Verify lysto image at top left corner', () => {
         cy.visit('https://lysto.gg/')
