@@ -3,51 +3,46 @@ describe('Communities page',() => {
     cy.visit('https://lysto.gg/communities');
     cy.contains('Top Communities').should('be.visible');
     });
-    it('Verify 10 configured communities are present are not in listing page: 1) PUNISHER ESPORTS',() => {
-        cy.visit('https://lysto.gg/communities');
-        cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[2]/div/p[1]').should('be.visible');
-        cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[4]/div/p[1]').should('have.text','PUNISHER ESPORTS');
-    });
-    it('2) Deepwoken ',() => {
+    it('Verify 09 configured communities are present are not in listing page: 1) Deepwoken ',() => {
         cy.visit('https://lysto.gg/communities');
         cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[29]/div/p[1]').should('be.visible');
         cy.contains('Deepwoken').should('be.visible');
     });
-    it('3) One Nation Esport... ',() => {
+    it('2) One Nation Esport... ',() => {
         cy.visit('https://lysto.gg/communities');
         cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[11]/div/p[1]').should('be.visible');
     });
-    it('4) Teenager Esports ',() => {
+    it('3) Teenager Esports ',() => {
         cy.visit('https://lysto.gg/communities');
         cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[15]/div/p[1]').should('be.visible');
         cy.contains('Teenager Esports').should('be.visible');
     });
-    it('5) Black Revengers',() => {
+    it('4) Black Revengers',() => {
         cy.visit('https://lysto.gg/communities');
         cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[24]/div/p[1]').should('be.visible');
         cy.contains('Black Revengers').should('be.visible');
     });
-    it('6) Nookazon',() => {
+    it('5) Nookazon',() => {
         cy.visit('https://lysto.gg/communities');
         cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[45]/div/p[1]').should('be.visible');
         cy.contains('Nookazon').should('be.visible');
     });
-    it('7) PUBG MOBILE',() => {
+    it('6) PUBG MOBILE',() => {
         cy.visit('https://lysto.gg/communities');
         cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[48]/div/p[1]').should('be.visible');
         cy.contains('PUBG MOBILE').should('be.visible');
     });
-    it('8) Valorant',() => {
+    it('7) Valorant',() => {
         cy.visit('https://lysto.gg/communities');
         cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[49]/div/p[1]').should('be.visible');
         cy.contains('Valorant').should('be.visible');
     });
-    it('9) Villager Esports',() => {
+    it('8) Villager Esports',() => {
         cy.visit('https://lysto.gg/communities');
         cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[62]/div/p[1]').should('be.visible');
         cy.contains('Villager Esports').should('be.visible');
     });
-    it('10) Metanomy',() => {
+    it('9) Metanomy',() => {
         cy.visit('https://lysto.gg/communities');
         cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[63]/div/p[1]').should('be.visible');
         cy.contains('Metanomy').should('be.visible');

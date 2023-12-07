@@ -1,44 +1,39 @@
 describe('Direct links Test', () => {
   it('Verify landing page', () => {
   cy.visit('https://lysto.gg')
-  cy.get('Img[src="/static/images/scrim_homepage.svg"]').should('be.visible');
+  cy.contains('Participate and win').should('be.visible');
 });
 it('Verify Tournament/upcoming page', () => {
   cy.visit('https://lysto.gg/tournaments/upcoming')
   cy.title().should('eq','Tournaments on Lysto : Building Gamers')
-  cy.xpath('//*[@id="__next"]/div/div/div/div/div[1]/div[3]/div[1]/div[2]/button/span[1]/div/img').click()
-  cy.get('Img[src="/static/images/ic_close.svg"]').click()
+  cy.contains('Register').should('be.visible')
 });
 it('Verify Tournament/live page', () => {
   cy.visit('https://lysto.gg/tournaments/live')
   cy.title().should('eq','Tournaments on Lysto : Building Gamers')
-  cy.xpath('//*[@id="__next"]/div/div/div/div/div[1]/div[3]/div[1]/div[2]/button/span[1]/div/img').click()
-  cy.get('Img[src="/static/images/ic_close.svg"]').click()
+  cy.contains('View Participants').should('be.visible')
 });
 it('Verify Tournament/past page', () => {
   cy.visit('https://lysto.gg/tournaments/past')
   cy.title().should('eq','Tournaments on Lysto : Building Gamers')
-  cy.xpath('//*[@id="__next"]/div/div/div/div/div[1]/div[3]/div[1]/div[2]/button/span[1]/div/img').click()
-  cy.get('Img[src="/static/images/ic_close.svg"]').click()
+  cy.contains('View Results').should('be.visible')
 });
 it('Verify scrims/upcoming page', () => {
   cy.visit('https://lysto.gg/scrims/upcoming')
-  cy.xpath('//*[@id="__next"]/div/div[2]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/img').click()
-  cy.get('Img[src="/static/images/ic_close.svg"]')
+  cy.contains('Register').should('be.visible')
 })
 it('Verify scrims/live page', () => {
   cy.visit('https://lysto.gg/scrims/live')
-  cy.xpath('//*[@id="__next"]/div/div[2]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/img').click()
-  cy.get('Img[src="/static/images/ic_close.svg"]')
+  cy.contains('Slots').should('be.visible')
 })
 it('Verify scrims/past page', () => {
   cy.visit('https://lysto.gg/scrims/past')
-  cy.xpath('//*[@id="__next"]/div/div[2]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/img').click()
-  cy.get('Img[src="/static/images/ic_close.svg"]')
+  cy.contains('View Results').should('be.visible')
+
 })
 it('Verify communities page', () => {
   cy.visit('https://lysto.gg/communities')
-  cy.xpath('//*[@id="__next"]/div/div[2]/div[2]/div/div[1]/div/div/div/ul/li[2]/div/div').should('be.visible');
+  cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[2]/div/p[1]').should('be.visible');
 });
 it('Verify activities page', () => {
   cy.visit('https://lysto.gg/activities')
