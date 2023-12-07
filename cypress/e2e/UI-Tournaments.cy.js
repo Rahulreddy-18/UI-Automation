@@ -17,7 +17,6 @@ describe('Tournaments', () => {
     it('Visit tournament details page(Past tournament)', () => {
         cy.visit('https://lysto.gg/games/bgmi-295/tournaments/tragic-esports-bgmi-showdown-cup-s1-60')
         cy.get('meta[property="og:title"][content="Lysto.gg | TRAGIC ESPORTS BGMI SHOWDOWN CUP S1 "]').should('exist');
-
     });
     it('Verify tournament name is visible or not', () => {
         cy.visit('https://lysto.gg/games/bgmi-295/tournaments/tragic-esports-bgmi-showdown-cup-s1-60')
