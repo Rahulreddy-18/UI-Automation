@@ -33,10 +33,6 @@ describe('Public view of a profile', () => {
         cy.contains('Create Passport').should('be.visible')
         cy.get('Img[src="/static/images/lysto_logo.svg"]').should('be.visible')
     })
-    //it('Verify Badges section',() => {
-        //cy.visit('https://lysto.gg/passport/Rahulreddy')
-        //cy.get('Img[src="https://passport-assets-private.s3.ap-south-1.amazonaws.com/images/Badge/1427ea91-6ae1-46b7-a64f-c2897b734a65/final-mtny-jpg.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA4KPQSSJ23O32A75H%2F20231017%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20231017T053617Z&X-Amz-Expires=60000&X-Amz-Signature=25a77bae8608c3bfd4cc340e5df4c36dcb4f9502ab2dbc68da0a71c46beb8894&X-Amz-SignedHeaders=host&x-id=GetObject"]').should('be.visible')
-    //})
     it('Verify trophies section',() => {
         cy.visit('https://lysto.gg/passport/Rahulreddy')
         cy.contains('Trophies').click()
@@ -80,22 +76,4 @@ describe('Public view of a profile', () => {
         cy.visit('https://lysto.gg/passport/Rahulreddy')
         cy.contains('Team Eagle').should('be.visible')
     })
-//     it('verify My communities card', () => {
-//         cy.visit('https://lysto.gg/passport/Rahulreddy')
-//         cy.contains('My communities').should('be.visible')
-//         cy.contains('Metanomy').should('be.visible')
-//     })
-//     it('verify My popps card', () => {
-//         cy.visit('https://lysto.gg/passport/Rahulreddy')
-//         cy.contains('View All').should('be.visible')
-//         cy.contains('Metanomy Badge').should('be.visible')
-//     })
-//     it('verify BGMI Gamer card', () => {
-//         cy.visit('https://lysto.gg/passport/Rahulreddy')
-//         cy.contains('【Rã๛Hûl】 | ').should('be.visible')
-//         cy.contains('Favorite weapon:').should('be.visible')
-//         cy.contains('Groza').should('be.visible')
-//         cy.contains('Achievements').should('be.visible')
-//         cy.contains('Clips').should('be.visible')
-//     })
 })

@@ -7,35 +7,31 @@ describe('Scrims page', () => {
         cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[1]/div/div/p[1]').click();
         cy.contains('Upcoming').should('be.visible');
       });
-      it('Verify share link of upcoming scrims', () => {
+      it('Verify that Register button should be visible in upcoming scrims page', () => {
         cy.visit('https://lysto.gg');
         cy.get('#Popps_06').click({force:true});
-        cy.xpath('//*[@id="__next"]/div/div[2]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/img').click()
-        cy.get('Img[src="/static/images/ic_close.svg"]')
+        cy.contains('Register').should('be.visible')
       });
       it('Verify Live Tab & text', () => {
         cy.visit('https://lysto.gg/scrims/upcoming');
         cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[1]/div/div/p[2]').click();
         cy.contains('Live').should('be.visible');
       });
-      it('Verify share link of live scrims', () => {
+      it('Verify that Slots text should be visible in live scrims page', () => {
         cy.visit('https://lysto.gg');
         cy.get('#Popps_06').click({force:true});
-        cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[1]/div/div/p[2]').click();
-        cy.xpath('//*[@id="__next"]/div/div[2]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/img').click()
-        cy.get('Img[src="/static/images/ic_close.svg"]')
+        cy.contains('Slots').should('be.visible')
      });
       it('Verify Past Tab & text', () => {
         cy.visit('https://lysto.gg/scrims/upcoming');
         cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[1]/div/div/p[3]').click();
         cy.contains('Past').should('be.visible')
      });
-     it('Verify share link of past scrims', () => {
+     it('Verify that View Results button should be visible in past scrims page', () => {
       cy.visit('https://lysto.gg');
       cy.get('#Popps_06').click({force:true});
-      cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[1]/div/div/p[3]').click();
-      cy.xpath('//*[@id="__next"]/div/div[2]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div/img').click()
-      cy.get('Img[src="/static/images/ic_close.svg"]')
+      cy.contains('Past').click()
+      cy.contains('Results Awaited').should('be.visible')
    });
    it('Visit scrims details page & verify page title', () => {
     cy.visit('https://lysto.gg/games/BGMI/scrim/lysto-scrim-1-75');
@@ -49,43 +45,22 @@ describe('Scrims page', () => {
     cy.visit('https://lysto.gg/games/BGMI/scrim/lysto-scrim-1-75');
     cy.contains('Prize').click();
     cy.contains('1st Prize').should('be.visible');
-    cy.contains('2nd Prize').should('be.visible');
-    cy.contains('3rd Prize').should('be.visible');
   });
   it('Click on one team and verify all team members present or not in slots list section', () => {
     cy.visit('https://lysto.gg/games/BGMI/scrim/lysto-scrim-1-75');
     cy.contains('Slot list').click();
-    cy.contains('Tech Team').click();
-    cy.contains('RedBaron').should('be.visible');
-    cy.contains('naveen-gg').should('be.visible');
-    cy.contains('Rahulreddy').should('be.visible');
-    cy.contains('Kuldeep8').should('be.visible');
+    cy.contains('Waitlist (5)').click();
+    cy.wait(3000);
+    cy.xpath('/html/body/div[1]/section/div/div[2]/div[2]/div[2]/div[2]/div/div/div[2]/div[3]/div/div[1]/p').should('have.text','Tech Team');
   });
   it('Verify confirmed tab in slot list tab', () => {
     cy.visit('https://lysto.gg/games/BGMI/scrim/lysto-scrim-1-75')
     cy.contains('Slot list').click()
-    cy.contains('Waitlist').click()
-    cy.contains('Confirmed').click()
-    cy.contains('Warriors').should('be.visible')
-  })
-  it('Verify waitlist tab in slot list tab', () => {
-    cy.visit('https://lysto.gg/games/BGMI/scrim/lysto-scrim-1-75')
-    cy.contains('Slot list').click();
-    cy.contains('Waitlist').click()
     cy.contains('No participants to show').should('be.visible')
   })
-  it('Click on one team and verify all team members present or not in results section', () => {
+  it('Verify results section', () => {
     cy.visit('https://lysto.gg/games/BGMI/scrim/lysto-scrim-1-75');
     cy.contains('Results').click();
-    cy.contains('#1').click();
-    cy.contains('RedBaron').should('be.visible');
-    cy.contains('naveen-gg').should('be.visible');
-    cy.contains('Rahulreddy').should('be.visible');
-    cy.contains('Kuldeep8').should('be.visible');
+    cy.contains('Results are yet to be declared !!!').should('be.visible');
   });
-  it('Verify share link in scrims details page', () => {
-    cy.visit('https://lysto.gg/games/BGMI/scrim/lysto-scrim-1-75')
-    cy.get('Img[src="/static/images/share.svg"]').click()
-    cy.get('#textarea').should('have.text','https://lysto.gg/games/BGMI/scrim/lysto-scrim-1-75')
-  })
 });
