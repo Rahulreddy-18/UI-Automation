@@ -2,6 +2,7 @@ describe('Direct links Test', () => {
   it('Verify landing page', () => {
   cy.visit('https://lysto.gg')
   cy.contains('Participate and win').should('be.visible');
+  cy.title().should('eq',"Lysto.gg | The Ultimate Gamers' Network")
 });
 it('Verify Tournament/upcoming page', () => {
   cy.visit('https://lysto.gg/tournaments/upcoming')
@@ -29,11 +30,10 @@ it('Verify scrims/live page', () => {
 it('Verify scrims/past page', () => {
   cy.visit('https://lysto.gg/scrims/past')
   cy.contains('View Results').should('be.visible')
-
 })
 it('Verify communities page', () => {
   cy.visit('https://lysto.gg/communities')
-  cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[2]/div/p[1]').should('be.visible');
+  cy.xpath('/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div[3]/div/p[1]').should('be.visible');
 });
 it('Verify activities page', () => {
   cy.visit('https://lysto.gg/activities')
