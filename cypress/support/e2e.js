@@ -20,3 +20,4 @@ import './commands'
 // require('./commands')
 //Cypress
 require('cypress-xpath');
+import 'cypress-mochawesome-reporter/register';
