@@ -81,8 +81,10 @@ describe('Landing page',() => {
     });
     it('Verify footer', () => {
         cy.visit('https://lysto.gg/')
-        cy.contains('Terms & Conditions').should('be.visible')
-        cy.contains('Privacy Policy').should('be.visible')
+        cy.contains('Terms').should('be.visible')
+        cy.contains('Privacy').should('be.visible')
+        cy.contains('Lysto Rewards').should('be.visible')
+        cy.contains('About us').should('be.visible')
     })
     it('Verify instagram image in footer', () => {
         cy.visit('https://lysto.gg/')

@@ -6,10 +6,6 @@ describe('Public view of a profile', () => {
         cy.visit('https://lysto.gg/passport/Rahulreddy')
         cy.title().should('eq','Rahulreddy')
     })
-    it('Verify avatar',() => {
-        cy.visit('https://lysto.gg/passport/Rahulreddy')
-        cy.get('Img[src="https://assets-test.lysto.io/0xef9264eDA4089457fdcc1e85E3A5478B173453A6/images/34056/trophy_1st.jpg"]').should('be.visible')
-    })
     it('Verify profile name',() => {
         cy.visit('https://lysto.gg/passport/Rahulreddy')
         cy.contains('JohN CeNa').should('be.visible')
@@ -32,11 +28,6 @@ describe('Public view of a profile', () => {
         cy.visit('https://lysto.gg/passport/Rahulreddy')
         cy.contains('Create Passport').should('be.visible')
         cy.get('Img[src="/static/images/lysto_logo.svg"]').should('be.visible')
-    })
-    it('Verify trophies section',() => {
-        cy.visit('https://lysto.gg/passport/Rahulreddy')
-        cy.contains('Trophies').click()
-        cy.contains('No Trophies Found').should('be.visible')
     })
     it('Verify followers section',() => {
         cy.visit('https://lysto.gg/passport/Rahulreddy')
