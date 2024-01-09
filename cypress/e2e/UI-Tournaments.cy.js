@@ -26,7 +26,7 @@ describe('Tournaments', () => {
         cy.visit('https://lysto.gg/games/bgmi-295/tournaments/tragic-esports-bgmi-showdown-cup-s1-60')
         cy.get('Img[src="/static/images/ic_lysto_prize.svg"]').should('be.visible')
         cy.contains('Prize Pool').should('be.visible')
-        cy.contains('₹50,000').should('be.visible')
+        cy.contains('₹ 50,000').should('be.visible')
     })
     it('Verify Overview tab',() => {
         cy.visit('https://lysto.gg/games/bgmi-295/tournaments/tragic-esports-bgmi-showdown-cup-s1-60')
