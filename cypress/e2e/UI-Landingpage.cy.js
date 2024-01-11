@@ -2,15 +2,15 @@ describe('Landing page',() => {
     Cypress.on('uncaught:exception', (err, runnable) => {
       return false;
     })
-    it('Visit landing page & verify title of the page',() => {
+    it('Visit landing page & verify the title of the page',() => {
         cy.visit('https://lysto.gg/');
         cy.title().should('eq',"Lysto.gg | The Ultimate Gamers' Network");
     });
-    it('Verify lysto image at top left corner', () => {
+    it('Verify the lysto logo image at the top left corner', () => {
         cy.visit('https://lysto.gg/')
         cy.xpath('//*[@id="__next"]/section/div/div[1]/div[1]/div/div[1]/span/img').should('be.visible')
     })
-    it('Verify tournaments text & click on tournaments in top right toolbar',() => {
+    it('Verify tournaments text & click on tournaments on the top right toolbar',() => {
         cy.visit('https://lysto.gg/');
         cy.get('#Tournament_02').should('have.text','Tournaments');
         cy.get('#Tournament_02').click({force: true});
@@ -34,6 +34,14 @@ describe('Landing page',() => {
         cy.visit('https://lysto.gg/');
         cy.get('#login-button').should('have.text','Login');
         cy.get('#login-button').click({force: true});
+    });
+    it('Verify "Participate and win" text should be visible to the user',() => {
+        cy.visit('https://lysto.gg/');
+        cy.contains('Participate and win').should('be.visible');
+    });
+    it('Verify "Registration ends in 2 days" text should be visible to the user',() => {
+        cy.visit('https://lysto.gg/');
+        cy.contains('Registration ends in 2 days').should('be.visible');
     });
     it('Verify listing section is present or not',() => {
         cy.visit('https://lysto.gg/');
@@ -79,7 +87,7 @@ describe('Landing page',() => {
         cy.visit('https://lysto.gg/');
         cy.contains('Explore Tournaments').click();
     });
-    it('Verify footer', () => {
+    it('Verify footer - (Aboutus | Lysto rewards | Terms | Privacy )', () => {
         cy.visit('https://lysto.gg/')
         cy.contains('Terms').should('be.visible')
         cy.contains('Privacy').should('be.visible')
@@ -88,15 +96,18 @@ describe('Landing page',() => {
     })
     it('Verify instagram image in footer', () => {
         cy.visit('https://lysto.gg/')
-        cy.get('Img[src="/static/images/Instagram.svg"]').should('be.visible')
+        cy.get('img[alt="instagram"]').should('exist');
+        cy.xpath('//*[@id="__next"]/footer/div/div[2]/div/div[3]/div/span/img').should('exist');
     })
     it('Verify X image in footer', () => {
         cy.visit('https://lysto.gg/')
-        cy.get('Img[src="/static/images/X.svg"]').should('be.visible')
+        cy.get('img[alt="twitter"]').should('exist');
+        cy.xpath('//*[@id="__next"]/footer/div/div[2]/div/div[2]/div/span/img').should('exist')
     })
     it('Verify discord image in footer', () => {
         cy.visit('https://lysto.gg/')
-        cy.get('Img[src="/static/images/discord-logo-2.svg"]').should('be.visible')
+        cy.get('img[alt="discord"]').should('exist');
+        cy.xpath('//*[@id="__next"]/footer/div/div[2]/div/div[1]/div/span/img').should('exist')
     })
 });
 
