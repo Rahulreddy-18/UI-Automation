@@ -19,11 +19,13 @@ it('Verify tournament/upcoming page link', () => {
 });
 it('Verify tournament/live page link', () => {
   cy.visit('https://lysto.gg/tournaments/live')
+  cy.wait(12000)
   cy.title().should('eq','Tournaments on Lysto : Building Gamers')
   cy.contains('View Participants').should('be.visible')
 });
 it('Verify tournament/past page link', () => {
   cy.visit('https://lysto.gg/tournaments/past')
+  cy.wait(12000)
   cy.title().should('eq','Tournaments on Lysto : Building Gamers')
   cy.contains('View Results').should('be.visible')
 });

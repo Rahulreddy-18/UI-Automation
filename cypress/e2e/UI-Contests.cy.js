@@ -6,7 +6,7 @@ describe('Contest page', () => {
     it('Verify LOGIN TO PARTICIPATE button is present or not', () => {
     // visit landing page
     cy.visit('https://lysto.gg');
-    //Click on games
+    cy.wait(5000);
     cy.get('#Contests_05').click({force:true});
     //Click on share CTA and verify the link 
     cy.wait(5000);

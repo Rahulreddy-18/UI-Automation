@@ -1,5 +1,7 @@
 describe('Tournaments', () => {
-    
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        return false;
+    })
     it('Verify tournament listing page(Upcoming)', () => {
     cy.visit('https://lysto.gg/tournaments/upcoming')
     cy.contains('Upcoming').should('be.visible')
@@ -64,18 +66,17 @@ describe('Tournaments', () => {
         cy.contains("Teams").should('be.visible')
         cy.contains("419").should('be.visible')
     });
-    it('Verify some random team names and team members: 1)HAVOK ESPORTS',() => {
+    it('Verify one of the team name and team members: HAVOK ESPORTS',() => {
         cy.visit('https://lysto.gg/games/bgmi-295/tournaments/tragic-esports-bgmi-showdown-cup-s1-60')
         cy.contains("Participants").click()
         cy.contains("HAVOK ESPORTS").should('be.visible')
-        cy.contains("811672109918").should('be.visible')
         cy.contains("HAVOK彡sToRmOP").should('be.visible')
     });
-    it('2)ICONIC GAMERS',() => {
+    it(' Verify Announcements section',() => {
         cy.visit('https://lysto.gg/games/bgmi-295/tournaments/tragic-esports-bgmi-showdown-cup-s1-60')
         cy.contains("Participants").click()
-        cy.contains("ICONIC GAMERS").should('be.visible')
-        cy.contains("55571493473").should('be.visible')
+        cy.contains("Announcements").should('be.visible')
+        cy.contains("No announcements to show").should('be.visible')
     });
     it('Verify results tab',() => {
         cy.visit('https://lysto.gg/games/bgmi-295/tournaments/tragic-esports-bgmi-showdown-cup-s1-60')

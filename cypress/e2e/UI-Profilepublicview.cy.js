@@ -17,7 +17,7 @@ describe('Public view of a profile', () => {
     it('Verify share profile button and link',() => {
         cy.visit('https://lysto.gg/passport/Rahulreddy')
         cy.contains('Share Profile').click()
-        cy.get('#textarea').should('have.text','https://lysto.gg/passport/Rahulreddy')
+        cy.get('#textarea').should('have.text','https://lysto.gg/passport/Rahulreddy?utm_source=clipboard&utm_medium=referral&utm_campaign=profile')
     })
     it('Verify about me',() => {
         cy.visit('https://lysto.gg/passport/Rahulreddy')

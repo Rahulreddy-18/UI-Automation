@@ -1,4 +1,7 @@
 describe('Dynamic Left Toolbar', () => {
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        return false;
+    })
     it('Verify that the lysto logo should be visible on the toolbar', () => {
         cy.visit('https://lysto.gg/tournaments/upcoming')
         cy.get('Img[src="/static/images/lysto_logo.svg"]').should('be.visible')

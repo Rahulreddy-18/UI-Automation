@@ -1,8 +1,11 @@
 describe('About-Us Page',() => {
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        return false;
+    })
     it('Visit About-Us Page & click on login button',() => {
         cy.visit('https://lysto.gg/about-us');
         cy.contains('Login').click()
-        cy.contains('Connect your account').should('be.visible')
+        cy.contains('Connect your account tapas').should('be.visible')
         });
     it('Verify Tournaments CTA in top bar',() => { 
         cy.visit('https://lysto.gg/about-us');

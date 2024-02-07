@@ -39,9 +39,9 @@ describe('Landing page',() => {
         cy.visit('https://lysto.gg/');
         cy.contains('Participate and win').should('be.visible');
     });
-    it('Verify "Registration ends in 2 days" text should be visible to the user',() => {
+    it('Verify "Registration ends in 5 days" text should be visible to the user',() => {
         cy.visit('https://lysto.gg/');
-        cy.contains('Registration ends in 2 days').should('be.visible');
+        cy.contains('Registration ends in 5 days').should('be.visible');
     });
     it('Verify listing section is present or not',() => {
         cy.visit('https://lysto.gg/');
