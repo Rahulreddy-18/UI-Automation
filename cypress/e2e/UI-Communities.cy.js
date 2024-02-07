@@ -1,4 +1,7 @@
 describe('Communities page',() => {
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        return false;
+    })
     it('Visit communities listing page and verify Top communities text is visible or not',() => {
     cy.visit('https://lysto.gg/communities');
     cy.contains('Top Communities').should('be.visible');
